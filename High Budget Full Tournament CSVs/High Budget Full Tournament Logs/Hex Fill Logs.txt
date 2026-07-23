@@ -1,0 +1,20 @@
+
+[m41746pm@login1[csf3] ~]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+[m41746pm@login1[csf3] mcts-tournament]$ cd ~/scratch/mcts-tournament/results
+[m41746pm@login1[csf3] results]$ head -1 csf_gomoku_15x15_results_chunk1.csv > ../csf_gomoku_15x15_FINAL.csv
+[m41746pm@login1[csf3] results]$ for f in csf_gomoku_15x15_results_chunk*.csv; do     tail -n +2 "$f" >> ../csf_gomoku_15x15_FINAL.csv; done
+[m41746pm@login1[csf3] results]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ gedit hex-fill-array.txt &
+[1] 365934
+[m41746pm@login1[csf3] mcts-tournament]$ sbatch hex-fill-array.txt
+Submitted batch job 17798122
+[1]+  Done                    gedit hex-fill-array.txt
+[m41746pm@login1[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+     17798122_0 0.0000006 serial       mcts-hex-fill   m41746pm R  22/07/26 22:53 22/07/26 22:53 0:06       4:00:00         1     1 node621
+     17798122_1 0.0000006 serial       mcts-hex-fill   m41746pm R  22/07/26 22:53 22/07/26 22:53 0:06       4:00:00         1     1 node624
+     17798122_2 0.0000006 serial       mcts-hex-fill   m41746pm R  22/07/26 22:53 22/07/26 22:53 0:06       4:00:00         1     1 node624
+     17798122_3 0.0000006 serial       mcts-hex-fill   m41746pm R  22/07/26 22:53 22/07/26 22:53 0:06       4:00:00         1     1 node628
+     17798122_4 0.0000006 serial       mcts-hex-fill   m41746pm R  22/07/26 22:53 22/07/26 22:53 0:06       4:00:00         1     1 node629

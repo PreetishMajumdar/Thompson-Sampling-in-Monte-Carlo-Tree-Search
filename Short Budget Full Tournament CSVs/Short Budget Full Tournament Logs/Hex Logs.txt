@@ -1,0 +1,65 @@
+[m41746pm@login2[csf3] ~]$ cd ~/scratch/mcts-tournament
+[m41746pm@login2[csf3] mcts-tournament]$ gedit hex-array-job.txt &
+[1] 2999717
+[m41746pm@login2[csf3] mcts-tournament]$ gedit hex-array-job.txt &
+[2] 3005319
+[1]   Done                    gedit hex-array-job.txt
+[m41746pm@login2[csf3] mcts-tournament]$ sbatch hex-array-job.txt
+Submitted batch job 17776160
+[2]+  Done                    gedit hex-array-job.txt
+[m41746pm@login2[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+[m41746pm@login2[csf3] mcts-tournament]$ sbatch hex-array-job.txt
+Submitted batch job 17776251
+[m41746pm@login2[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+     17776251_0 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node629
+     17776251_1 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node621
+     17776251_2 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node621
+     17776251_3 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node624
+     17776251_4 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node625
+     17776251_5 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node625
+     17776251_6 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node625
+     17776251_7 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node603
+     17776251_8 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node602
+     17776251_9 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node602
+    17776251_10 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node602
+    17776251_11 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node602
+    17776251_12 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_13 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_14 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_15 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_16 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_17 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node601
+    17776251_18 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_19 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_20 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_21 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_22 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_23 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_24 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_25 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_26 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_27 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node600
+    17776251_28 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_29 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_30 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_31 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_32 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_33 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_34 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_35 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_36 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node604
+    17776251_37 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_38 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_39 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_40 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_41 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_42 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_43 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_44 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_45 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_46 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_47 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_48 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605
+    17776251_49 0.0000006 serial       mcts-hex-array  m41746pm R  21/07/26 19:16 21/07/26 19:16 0:08       3:00:00         1     1 node605

@@ -1,0 +1,40 @@
+Last login: Wed Jul 22 12:11:13 2026 from 10.229.130.171
+[m41746pm@login1[csf3] ~]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+[m41746pm@login1[csf3] ~]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ cd ~/scratch/mcts-tournament/results
+[m41746pm@login1[csf3] results]$ head -1 csf_gomoku_15x15_results_chunk1.csv > ../csf_gomoku_15x15_FINAL.csv
+[m41746pm@login1[csf3] results]$ for f in csf_gomoku_15x15_results_chunk*.csv; do     tail -n +2 "$f" >> ../csf_gomoku_15x15_FINAL.csv; done
+[m41746pm@login1[csf3] results]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ gedit hex-array-job.txt &
+[1] 3115669
+[m41746pm@login1[csf3] mcts-tournament]$ gedit hex-array-job.txt &
+[2] 3170202
+[1]   Done                    gedit hex-array-job.txt
+[m41746pm@login1[csf3] mcts-tournament]$ sbatch hex-array-job.txt
+Submitted batch job 17793261
+[2]+  Done                    gedit hex-array-job.txt
+[m41746pm@login1[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+     17793261_0 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_1 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_2 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_3 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_4 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_5 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_6 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_7 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_8 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+     17793261_9 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:05       6:00:00         1     1 node603
+[m41746pm@login1[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+     17793261_0 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_1 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_2 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_3 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_4 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_5 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_6 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_7 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_8 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603
+     17793261_9 0.0000006 serial       mcts-hex-array  m41746pm R  22/07/26 14:48 22/07/26 14:48 0:13       6:00:00         1     1 node603

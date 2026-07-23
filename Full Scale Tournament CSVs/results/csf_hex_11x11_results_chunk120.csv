@@ -1,0 +1,2 @@
+Game_Type,Board_Size,Game_ID,Player_1_Strategy,Player_2_Strategy,Winner,Total_Moves,Avg_UCT_Entropy,Avg_TS_Entropy,Avg_UCT_Time,Avg_TS_Time
+HexState,11,120,Thompson,UCT,UCT,38,4.554866918077451,4.481956120186115,40.6017694849717,39.74522652124104

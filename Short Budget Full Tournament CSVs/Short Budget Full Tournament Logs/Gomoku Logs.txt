@@ -1,0 +1,71 @@
+[m41746pm@login1[csf3] ~]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ cd ~/scratch/mcts-tournament/results
+[m41746pm@login1[csf3] results]$ head -1 csf_hex_11x11_results_chunk1.csv > ../csf_hex_11x11_FINAL.csv
+[m41746pm@login1[csf3] results]$ for f in csf_hex_11x11_results_chunk*.csv; do
+    tail -n +2 "$f" >> ../csf_hex_11x11_FINAL.csv
+done
+[m41746pm@login1[csf3] results]$ head -1 csf_hex_11x11_results_chunk1.csv > ../csf_hex_11x11_FINAL.csv
+[m41746pm@login1[csf3] results]$ for f in csf_hex_11x11_results_chunk*.csv; do     tail -n +2 "$f" >> ../csf_hex_11x11_FINAL.csv; done
+[m41746pm@login1[csf3] results]$ sbatch gomoku-array-job.txt
+sbatch: error: Unable to open file gomoku-array-job.txt
+[m41746pm@login1[csf3] results]$ cd ~/scratch/mcts-tournament
+[m41746pm@login1[csf3] mcts-tournament]$ gedit gomoku-array-job.txt &
+[1] 1378307
+[m41746pm@login1[csf3] mcts-tournament]$ gedit hex-array-job.txt &
+[2] 1400559
+[1]   Done                    gedit gomoku-array-job.txt
+[m41746pm@login1[csf3] mcts-tournament]$ sbatch gomoku-array-job.txt
+Submitted batch job 17790838
+[2]+  Done                    gedit hex-array-job.txt
+[m41746pm@login1[csf3] mcts-tournament]$ squeue
+          JOBID PRIORITY  PARTITION    NAME            USER     ST SUBMIT_TIME    START_TIME     TIME       TIME_LIMIT  NODES  CPUS NODELIST(REASON)
+     17790838_0 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node624
+     17790838_1 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node625
+     17790838_2 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node625
+     17790838_3 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node606
+     17790838_4 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node607
+     17790838_5 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node603
+     17790838_6 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node603
+     17790838_7 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+     17790838_8 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+     17790838_9 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+    17790838_10 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+    17790838_11 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+    17790838_12 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node605
+    17790838_13 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_14 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_15 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_16 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_17 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_18 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_19 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_20 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_21 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_22 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_23 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_24 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_25 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_26 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_27 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node604
+    17790838_28 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node929
+    17790838_29 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node900
+    17790838_30 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node900
+    17790838_31 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node900
+    17790838_32 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node906
+    17790838_33 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node906
+    17790838_34 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node906
+    17790838_35 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node904
+    17790838_36 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node903
+    17790838_37 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node903
+    17790838_38 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node903
+    17790838_39 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node938
+    17790838_40 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_41 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_42 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_43 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_44 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_45 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_46 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_47 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_48 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node939
+    17790838_49 0.0000006 serial       mcts-gomoku-arr m41746pm R  22/07/26 12:21 22/07/26 12:21 0:10       3:00:00         1     1 node920
