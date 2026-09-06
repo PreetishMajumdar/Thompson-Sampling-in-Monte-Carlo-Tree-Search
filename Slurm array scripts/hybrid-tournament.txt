@@ -1,0 +1,25 @@
+#!/bin/bash --login
+#SBATCH -p serial
+#SBATCH -n 1
+#SBATCH -t 0-08:00:00               # 8 hours per chunk (plenty for 2500 iterations)
+#SBATCH --job-name=mcts-hybrid
+#SBATCH --output=logs/mcts-hybrid-%A-%a.out
+#SBATCH --array=0-9                 # 10 tasks = 100 total games
+
+# Load environment
+module purge
+module load apps/binapps/conda/miniforge3/25.9.1
+source activate mcts-env
+
+# Compute dynamic starting game ID per array index
+START_ID=$(( SLURM_ARRAY_TASK_ID * 10 + 1 ))
+
+# Run Hybrid vs Thompson Sampling on Hex 11x11 (2500 iterations)
+python hybrid_tournament.py \
+    --game hex \
+    --board_size 11 \
+    --iterations 2500 \
+    --start_id $START_ID \
+    --chunk_size 10 \
+    --strategy_a Hybrid \
+    --strategy_b Thompson

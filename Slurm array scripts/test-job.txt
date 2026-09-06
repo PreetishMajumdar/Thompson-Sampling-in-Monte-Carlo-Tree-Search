@@ -1,0 +1,14 @@
+#!/bin/bash --login
+#SBATCH -p serial
+#SBATCH -n 1
+#SBATCH -t 0-02:00:00
+#SBATCH --job-name=mcts-benchmark
+#SBATCH --output=benchmark-results-%j.out
+
+# Load conda and activate environment
+module purge
+module load apps/binapps/conda/miniforge3/25.9.1
+source activate mcts-env
+
+# Time exactly 10 games at the real target scale (11x11, 2500 iterations)
+time python tournament.py --game hex --games 10 --board_size 11 --iterations 2500

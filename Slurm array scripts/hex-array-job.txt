@@ -1,0 +1,33 @@
+#!/bin/bash --login
+#SBATCH -p serial
+#SBATCH -n 1
+#SBATCH -t 0-06:00:00
+#SBATCH --job-name=mcts-hex-array
+#SBATCH --output=logs/mcts-%A-%a.out
+#SBATCH --array=0-9
+
+# Each array task handles 10 games
+# Task 0 = games 1-10, Task 1 = games 11-20, ... Task 49 = games 491-500
+START_ID=$(( SLURM_ARRAY_TASK_ID * 10 + 1 ))
+
+echo ""
+echo "Slurm Array Job ID: $SLURM_ARRAY_JOB_ID"
+echo "Array Task Index:   $SLURM_ARRAY_TASK_ID"
+echo "Running Game IDs:   $START_ID to $(( START_ID + 9 ))"
+echo "Started at: $(date)"
+echo ""
+
+# Load conda and activate environment
+module purge
+module load apps/binapps/conda/miniforge3/25.9.1
+source activate mcts-env
+
+# Run this chunk of games
+python tournament.py \
+    --game hex \
+    --board_size 11 \
+    --iterations 5000 \
+    --start_id $START_ID \
+    --chunk_size 10
+
+echo "Finished at: $(date)"
